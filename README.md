@@ -20,15 +20,7 @@ Run `trans` or run a comparison against `cp`!
 
 This program implements an efficient method of data transmission between source and destination files using pipes and shared memory. The program's main functionality and structure are as follows:
 
-- **Process Creation:** The program begins by opening the source file and checking for its existence, while also handling the case of an existing destination file.
-
-- **Pipe Establishment:** The `parent_to_child` and `child_to_parent` pipes are created using the `pipe` system call, setting up channels for communication between parent and child processes.
-
 - **Forking:** The `fork` system call is used to create a child process. The parent process (referred to as the `parent` process) is responsible for transmitting data to the child process.
-
-- **Parent Process (Transmitter):** In the parent process, data is read from the source file in fixed-size blocks. These blocks are then transmitted to the child process via pipes and shared memory. Block numbers and lengths are communicated to ensure synchronization.
-
-- **Child Process (Receiver):** The child process receives data from the parent process and writes it to a destination file. It sends acknowledgments to confirm receipt and synchronization. Once transmission is complete, the child process properly releases allocated resources.
 
 - **Shared Memory Usage:** Shared memory is used as a buffer to temporarily store data during transmission between the parent and child processes. This shared memory region is mapped using the `mmap` system call and is managed to prevent memory leaks.
 
