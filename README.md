@@ -32,10 +32,13 @@ This program implements an efficient method of data transmission between source 
 - **Source File Handling:** Opens the source file and manages the presence of the destination file.
 - **Parent Process Execution:**
    a. Reads data from the source file and transmits it to the child.
+  
    b. Manages block numbers and lengths for synchronization.
 - **Child Process Execution:**
    a. Receives data from the parent and writes it to the destination file.
+  
    b. Sends acknowledgments and ensures synchronization.
+  
    c. Cleans up shared memory and resources.
 
 By employing parallel processing, synchronization mechanisms, and efficient shared memory management, the "trans" program provides a potentially optimized method of transmitting data between source and destination files. It is a simple alternative implementation to conventional file copying methods.
