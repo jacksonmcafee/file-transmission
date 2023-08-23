@@ -31,10 +31,12 @@ This program implements an efficient method of data transmission between source 
 - **Argument Validation:** Validates the correct number of command-line arguments.
 - **Source File Handling:** Opens the source file and manages the presence of the destination file.
 - **Parent Process Execution:**
+  
    a. Reads data from the source file and transmits it to the child.
   
    b. Manages block numbers and lengths for synchronization.
 - **Child Process Execution:**
+  
    a. Receives data from the parent and writes it to the destination file.
   
    b. Sends acknowledgments and ensures synchronization.
